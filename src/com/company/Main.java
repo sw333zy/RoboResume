@@ -5,6 +5,11 @@ import java.util.Scanner;
 
 public class Main {
     static Scanner keyboard = new Scanner(System.in);
+    static String displayPerson;
+    static String displayEducation;
+    static String displayExperience;
+    static String displaySkills;
+
 
     public static void main(String[] args) {
         resumeMaker();
@@ -27,19 +32,15 @@ public class Main {
             p.setPhoneNumber(phoneNumber);
 
 //            people.add(p);
-            System.out.println("========================");
-            System.out.println(p.displayPerson());
+            displayPerson = p.displayPerson();
 
             System.out.println("Is this information correct? (y/n)");
             if (keyboard.nextLine().equalsIgnoreCase("y")){
                 break;
             }
         }
-
-
-
-
-    } public static void createEducation(){
+    }
+    public static void createEducation(){
         ArrayList<Education> education = new ArrayList<>();
         //creating new education
         Education edu = new Education();
@@ -58,7 +59,7 @@ public class Main {
 //        education.add(edu);
 
 
-        System.out.println(edu.displayEducation());
+        displayEducation = edu.displayEducation();
 
 
     }
@@ -81,7 +82,7 @@ public class Main {
 //        experience.add(exp);
 
 
-        System.out.println(exp.displayExperience());
+        displayExperience = exp.displayExperience();
 
 
     }
@@ -98,7 +99,7 @@ public class Main {
 //        skills.add(ski);
 
 
-        System.out.println(ski.displaySkills());
+       displaySkills = ski.displaySkills();
 
     }
 
@@ -112,9 +113,9 @@ public class Main {
             if (keyboard.nextLine().equalsIgnoreCase("n")){
                 break;
             }
-            System.out.println();
         }
-
+        System.out.println("==================================");
+        System.out.println(displayPerson + displayEducation + displayExperience + displaySkills);
 
     }
 }
