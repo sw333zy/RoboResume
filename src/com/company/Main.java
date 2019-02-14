@@ -4,17 +4,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+    static Scanner keyboard = new Scanner(System.in);
 
     public static void main(String[] args) {
-        createResume();
+        resumeMaker();
     }
 
-    public static void createResume(){
-        Scanner keyboard = new Scanner(System.in);
-        ArrayList<Person> people = new ArrayList<>();
-        ArrayList<Education> education = new ArrayList<>();
-        ArrayList<Experience> experience = new ArrayList<>();
-        ArrayList<Skills> skills = new ArrayList<>();
+    public static void createPerson(){
+//        ArrayList<Person> people = new ArrayList<>();
+
         while(true){
             //creating a new person
             System.out.println("Enter name: ");
@@ -27,66 +25,96 @@ public class Main {
             System.out.println("Enter phone number: ");
             String phoneNumber = keyboard.nextLine();
             p.setPhoneNumber(phoneNumber);
-            //creating new education
-            Education edu = new Education();
-            System.out.println("Enter School: ");
-            String school = keyboard.nextLine();
-            edu.setSchool(school);
-            System.out.println("Enter Degree: ");
-            String degree = keyboard.nextLine();
-            edu.setDegree(degree);
-            System.out.println("Enter Major: ");
-            String major = keyboard.nextLine();
-            edu.setMajor(major);
-            System.out.println("Enter Year: ");
-            String year = keyboard.nextLine();
-            edu.setYear(year);
-            //creating new experience
-            Experience exp = new Experience();
-            System.out.println("Enter Company: ");
-            String company = keyboard.nextLine();
-            exp.setCompany(company);
-            System.out.println("Enter Title: ");
-            String title = keyboard.nextLine();
-            exp.setTitle(title);
-            System.out.println("Enter Year: ");
-            String expYear = keyboard.nextLine();
-            exp.setExpYear(expYear);
-            System.out.println("Enter Description: ");
-            String description = keyboard.nextLine();
-            exp.setDescription(description);
-            //creating new skills
-            Skills ski = new Skills();
-            System.out.println("Enter Skill: ");
-            String skill = keyboard.nextLine();
-            ski.setSkills(skill);
-            System.out.println("Enter Competency: ");
-            String competency = keyboard.nextLine();
-            ski.setCompetency(competency);
+
+//            people.add(p);
+            System.out.println("========================");
+            System.out.println(p.displayPerson());
+
+            System.out.println("Is this information correct? (y/n)");
+            if (keyboard.nextLine().equalsIgnoreCase("y")){
+                break;
+            }
+        }
 
 
-            people.add(p);
-            education.add(edu);
-            experience.add(exp);
-            skills.add(ski);
+
+
+    } public static void createEducation(){
+        ArrayList<Education> education = new ArrayList<>();
+        //creating new education
+        Education edu = new Education();
+        System.out.println("Enter School: ");
+        String school = keyboard.nextLine();
+        edu.setSchool(school);
+        System.out.println("Enter Degree: ");
+        String degree = keyboard.nextLine();
+        edu.setDegree(degree);
+        System.out.println("Enter Major: ");
+        String major = keyboard.nextLine();
+        edu.setMajor(major);
+        System.out.println("Enter Year: ");
+        String year = keyboard.nextLine();
+        edu.setYear(year);
+//        education.add(edu);
+
+
+        System.out.println(edu.displayEducation());
+
+
+    }
+    public static void createExperience(){
+//        ArrayList<Experience> experience = new ArrayList<>();
+        //creating new experience
+        Experience exp = new Experience();
+        System.out.println("Enter Company: ");
+        String company = keyboard.nextLine();
+        exp.setCompany(company);
+        System.out.println("Enter Title: ");
+        String title = keyboard.nextLine();
+        exp.setTitle(title);
+        System.out.println("Enter Year: ");
+        String expYear = keyboard.nextLine();
+        exp.setExpYear(expYear);
+        System.out.println("Enter Description: ");
+        String description = keyboard.nextLine();
+        exp.setDescription(description);
+//        experience.add(exp);
+
+
+        System.out.println(exp.displayExperience());
+
+
+    }
+    public static void createSkills(){
+//        ArrayList<Skills> skills = new ArrayList<>();
+        //creating new skills
+        Skills ski = new Skills();
+        System.out.println("Enter Skill: ");
+        String skill = keyboard.nextLine();
+        ski.setSkills(skill);
+        System.out.println("Enter Competency: ");
+        String competency = keyboard.nextLine();
+        ski.setCompetency(competency);
+//        skills.add(ski);
+
+
+        System.out.println(ski.displaySkills());
+
+    }
+
+    public static void resumeMaker(){
+        while(true){
+            createPerson();
+            createEducation();
+            createExperience();
+            createSkills();
             System.out.println("Enter a new person? (y/n)");
             if (keyboard.nextLine().equalsIgnoreCase("n")){
                 break;
             }
+            System.out.println();
         }
-        System.out.println("========================");
-        for (Person eachPerson: people){
-            System.out.println(eachPerson.displayPerson());
-        }
-        for (Education eachEducation: education){
-            System.out.println(eachEducation.displayEducation());
-        }
-        for (Experience eachExperience: experience){
-            System.out.println(eachExperience.displayExperience());
-        }
-        for (Skills eachSkills: skills){
-            System.out.println(eachSkills.displaySkills());
-        }
+
 
     }
 }
