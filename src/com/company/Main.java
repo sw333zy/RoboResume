@@ -163,13 +163,15 @@ public class Main {
         //list for calling the created string
         skillList =  displaySkills.toString();
     }
-    //work in progress
+    //resume builder function
     public static void resumeMaker(){
         Scanner keyboard = new Scanner(System.in);
-        //array list to hold newly created skills
+        //array list to hold newly created resumes
         ArrayList<Resume> resumes = new ArrayList<>();
+        //keep looping until user doesnt want another resume
         while(true){
             Resume r = new Resume();
+            //call the following functions then set their property to the string created in each section
             createPerson();
             r.setPerson(displayPerson);
             createEducation();
@@ -178,12 +180,15 @@ public class Main {
             r.setExperienceSet(expList);
             createSkills();
             r.setSkillSet(skillList);
+            //add the newly created resume to the array
             resumes.add(r);
             System.out.println("Enter a new resume? (y/n): ");
+            //end if user doesnt want another resume
             if (keyboard.nextLine().equalsIgnoreCase("n")){
                 break;
             }
         }
+        //for loop for printing out the resumes
         for (Resume eachResume: resumes) {
             System.out.println(eachResume.displayResumes());
         }
