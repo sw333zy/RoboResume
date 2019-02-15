@@ -1,20 +1,20 @@
 package com.company;
 
 public class Skills extends Person {
-    private String skills;
+    private String skill;
     private String competency;
 
     public Skills(){
-        skills = "";
+        skill = "";
         competency = "";
     }
 
-    public String getSkills() {
-        return skills;
+    public String getSkill() {
+        return skill;
     }
 
-    public void setSkills(String skills) {
-        this.skills = skills;
+    public void setSkill(String skill) {
+        this.skill = skill;
     }
 
     public String getCompetency() {
@@ -26,6 +26,6 @@ public class Skills extends Person {
     }
 
     public String displaySkills(){
-        return String.format("Skills \n %s, %s \n", this.getSkills(), this.getCompetency());
+        return String.format(" %s, %s \n", this.getSkill(), this.getCompetency());
     }
 }

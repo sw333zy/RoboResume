@@ -45,6 +45,6 @@ public class Education extends Person {
         this.year = year;
     }
     public String displayEducation(){
-        return String.format("Education \n %s in %s, \n %s, %s \n", this.getDegree(), this.getMajor(), this.getSchool(), this.getYear());
+        return String.format("\n %s in %s, \n %s, %s \n", this.getDegree(), this.getMajor(), this.getSchool(), this.getYear());
     }
 }

@@ -46,7 +46,7 @@ public class Experience extends Person {
     }
 
     public String displayExperience(){
-        return String.format("Experience \n %s \n %s, %s \n %s \n", this.getDescription(), this.getExpYear(), this.getTitle(), this.getCompany());
+        return String.format("\n %s \n %s, %s \n %s \n",  this.getTitle(), this.getCompany(),  this.getExpYear(), this.getDescription());
     }
 
 }
