@@ -165,20 +165,28 @@ public class Main {
     }
     //work in progress
     public static void resumeMaker(){
-        ArrayList<Person> people = new ArrayList<>();
-        Person p = new Person();
+        Scanner keyboard = new Scanner(System.in);
+        //array list to hold newly created skills
+        ArrayList<Resume> resumes = new ArrayList<>();
         while(true){
+            Resume r = new Resume();
             createPerson();
+            r.setPerson(displayPerson);
             createEducation();
+            r.setEducationSet(eduList);
             createExperience();
+            r.setExperienceSet(expList);
             createSkills();
-            System.out.println("Enter a new person? (y/n): ");
+            r.setSkillSet(skillList);
+            resumes.add(r);
+            System.out.println("Enter a new resume? (y/n): ");
             if (keyboard.nextLine().equalsIgnoreCase("n")){
                 break;
             }
         }
-        System.out.println("==================================");
-        System.out.println(displayPerson + "\n Education " + eduList + "\n Experience " + expList + "\n Skills" + skillList);
+        for (Resume eachResume: resumes) {
+            System.out.println(eachResume.displayResumes());
+        }
 
     }
 }
