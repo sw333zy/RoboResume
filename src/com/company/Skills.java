@@ -1,6 +1,6 @@
 package com.company;
 
-public class Skills extends Person {
+public class Skills {
     private String skill;
     private String competency;
 

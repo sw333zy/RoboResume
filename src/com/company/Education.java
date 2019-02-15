@@ -1,6 +1,6 @@
 package com.company;
 
-public class Education extends Person {
+public class Education {
     private String school;
     private String degree;
     private String major;

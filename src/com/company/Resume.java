@@ -6,6 +6,7 @@ public class Resume {
     private String experienceSet;
     private String skillSet;
 
+
     public String getPerson() {
         return person;
     }
@@ -41,7 +42,6 @@ public class Resume {
     public String displayResumes(){
         return String.format("==================================\n" + person + "\n Education " + educationSet + "\n Experience " + experienceSet + "\n Skills" + skillSet);
     }
-
-    //        System.out.println(displayPerson + "\n Education " + eduList + "\n Experience " + expList + "\n Skills" + skillList);
+    String searchContent = displayResumes();
 
 }

@@ -194,6 +194,20 @@ public class Main {
         }
 
     }
+//    public static void recruiterSearch(){
+//        Recruiter s = new Recruiter();
+//        Scanner keyboard = new Scanner(System.in);
+//        System.out.println("Please enter a search term: ");
+//        String searchTerm = keyboard.nextLine();
+//        s.setText(searchTerm);
+//        String resumeContents = Resume.display;
+//        s.setWord();
+//
+//
+//        if(searchTerm.equals())
+//
+//    }
+
 }
 
 //    public static void createSkills() {

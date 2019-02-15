@@ -1,6 +1,6 @@
 package com.company;
 
-public class Experience extends Person {
+public class Experience {
     private String company;
     private String title;
     private String expYear;
